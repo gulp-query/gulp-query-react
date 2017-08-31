@@ -1,0 +1,23 @@
+{
+    "name": "gulp-query-react",
+    "version": "1.0.0",
+    "description": "React with a single line of code.",
+    "main": "index.js",
+    "author": "Marat Nuriev",
+    "email": "nurieff@gmail.com",
+    "license": "MIT",
+    "repository": "https://github.com/gulp-query/gulp-query-react",
+    "keywords": [
+        "js",
+        "jsx",
+        "react",
+        "gulp",
+        "gulp-query",
+        "gulp-query-plugin"
+    ],
+    "dependencies": {
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-react": "^6.24.1",
+        "gulp-query-webpack": "^1.0.1"
+    }
+}
