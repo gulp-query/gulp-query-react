@@ -53,7 +53,7 @@ And feel the freedom
 gulp
 gulp --production // For production
 gulp watch // Watching change
-gulp react // Only for webpack
+gulp react // Only for react
 gulp react:app // Only for app.js
 gulp react:admin react:main watch // Watching change only for admin and main
 ...
@@ -62,7 +62,7 @@ gulp react:admin react:main watch // Watching change only for admin and main
 ### Options
 ```javascript
 .react({
-    name: "task_name", // For gulp webpack:task_name 
+    name: "task_name", // For gulp react:task_name 
     from: "src/js/app.js",
     to: "js/", // set filename "js/concat.js" -- for rename
     source_map: true,
