@@ -10,12 +10,10 @@ Uses
 React with a single line of code.
 
 Supports:
-* ES2017, React + modules compilation
-* Tree-shaking, new in webpack 2 (removes unused library code)
-* Import `.scss` and `.css` in js
+* Webpack 4 + Babel
+* Import `.scss` ans `.css` in js
+* Decorators (For [mobx](https://mobx.js.org)), dynamic import, class properties, object rest spread
 * Custom config for Babel
-
-P.S. Try [gulp-query-webpack-buble](https://github.com/gulp-query/gulp-query-webpack-buble) with the blazing fast, batteries-included ES2015 compiler and support React from box
 
 ```text
 npm install gulp-query gulp-query-react
@@ -34,8 +32,13 @@ build((query) => {
       // Rename and own babel config
       .react('src/js/admin.js','js/undercover.js',{
         babel: {
-          plugins: ["babel-plugin-transform-decorators"].map(require.resolve),
-          presets: ['babel-preset-react', 'babel-preset-env'].map(require.resolve)
+          presets: ['@babel/preset-env','@babel/preset-react'],
+          plugins: [
+            "@babel/plugin-syntax-dynamic-import",
+            "@babel/plugin-proposal-object-rest-spread",
+            ["@babel/plugin-proposal-decorators", { "legacy": true }],
+            ["@babel/plugin-proposal-class-properties", { "loose" : true }]
+          ]
         }
       })
     
@@ -69,8 +72,13 @@ gulp react:admin react:main watch // Watching change only for admin and main
     source_map_type: 'inline',
     full: false, // if set true is without compress in prod
     babel: {
-      cacheDirectory: true,
-      presets: ['babel-preset-react', 'babel-preset-env'].map(require.resolve)
+      presets: ['@babel/preset-env','@babel/preset-react'],
+      plugins: [
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-proposal-object-rest-spread",
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        ["@babel/plugin-proposal-class-properties", { "loose" : true }]
+      ]
     }
 })
 ```

@@ -1,6 +1,6 @@
 {
     "name": "gulp-query-react",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "React with a single line of code.",
     "main": "index.js",
     "author": "Marat Nuriev",
@@ -16,8 +16,12 @@
         "gulp-query-plugin"
     ],
     "dependencies": {
-        "babel-preset-env": "^1.6.0",
-        "babel-preset-react": "^6.24.1",
-        "gulp-query-webpack": "^1.0.1"
+        "@babel/plugin-proposal-class-properties": "^7.2.3",
+        "@babel/plugin-proposal-decorators": "^7.2.3",
+        "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@babel/preset-env": "^7.2.3",
+        "@babel/preset-react": "^7.0.0",
+        "gulp-query-webpack": "^1.1.0"
     }
 }

@@ -6,10 +6,15 @@ class ReactPlugin extends Plugin {
     return 'react';
   }
 
-  babelrc() {
+  babelLoaderConfig() {
     return {
-      cacheDirectory: true,
-      presets: ['babel-preset-react', 'babel-preset-env'].map(require.resolve)
+      presets: ['@babel/preset-env','@babel/preset-react'].map(require.resolve),
+      plugins: [
+        require.resolve("@babel/plugin-syntax-dynamic-import"),
+        require.resolve("@babel/plugin-proposal-object-rest-spread"),
+        [require.resolve("@babel/plugin-proposal-decorators"), { "legacy": true }],
+        [require.resolve("@babel/plugin-proposal-class-properties"), { "loose" : true }]
+      ]
     }
   }
 
